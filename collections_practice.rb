@@ -1,1 +1,54 @@
+def sort_array_asc(array)
+    array.sort
+end
 
+def sort_array_desc(array)
+    array.sort do |a, b|
+        b <=> a
+    end
+end
+
+def sort_array_char_count(array)
+    array.sort do |a, b|
+        a.length <=> b.length
+    end
+end
+
+def swap_elements(array)
+    item2 = array[1]
+    item3 = array[2]
+
+    array[1] = item3
+    array[2] = item2
+    array
+end
+
+def reverse_array(array)
+    array.reverse
+end
+
+def kesha_maker(array)
+    array.each {|item| item[2] = "$"}
+end
+
+def find_a(array)
+    selection_array = []
+    array.each do |name|
+        if name.start_with?("a")
+            selection_array << name
+        end
+    end
+    selection_array 
+end
+
+def sum_array(array)
+    array.inject (0) { |result_memo, object| result_memo + object }
+end
+
+def add_s(array)
+    array.each.with_index(0) do |item, index|
+        if !(index == 1)
+            item << "s"
+        end
+    end
+end
